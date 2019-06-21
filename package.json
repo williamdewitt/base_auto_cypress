@@ -1,0 +1,12 @@
+{
+    "name": "cypress",
+    "dependencies": {},
+    "scripts": {
+        "cypress:open": "npx cypress open",
+        "cypress:run": "npx cypress run"
+    },
+    "devDependencies": {
+        "@applitools/eyes-cypress": "^3.6.31",
+        "eslint": "^5.16.0"
+    }
+}
