@@ -2,11 +2,13 @@
     "name": "cypress",
     "dependencies": {},
     "scripts": {
+        "startdb": "json-server --watch cypress/fixtures/db.json",
         "cy:open": "npx cypress open",
         "cy:run": "npx cypress run"
     },
     "devDependencies": {
         "@applitools/eyes-cypress": "^3.6.31",
-        "eslint": "^5.16.0"
+        "eslint": "^5.16.0",
+        "json-server": "^0.15.0"
     }
 }

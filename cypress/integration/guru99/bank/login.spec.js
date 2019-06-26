@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+// @ts-check
 import HomePage from '../../../pages/bank/HomePage'
 import ManagersPage from '../../../pages/bank/ManagersPage'
 
@@ -10,9 +12,17 @@ describe("Logging in", function () {
         home.visit();
     });
 
-    it.only('can log in', () => {
+    it('can log in', () => {
         cy.fixture('example').then((example)  => {
             home.login(example['user'].username, example['user'].password)
+        })
+
+        cy.get('marquee.heading3').should('contain', "Welcome To Manager's Page of GTPL Bank")
+    });
+
+    it.only('can log in using db', () => {
+        cy.request('http://localhost:3000/users').its('body').then((user) => {
+            home.login(user[0].username, user[0].password)
         })
 
         cy.get('marquee.heading3').should('contain', "Welcome To Manager's Page of GTPL Bank")
@@ -27,7 +37,9 @@ describe("Logging in", function () {
     });
 
     it('can log out', () => {
-        home.login(USERNAME, PASSWORD)
+        cy.fixture('example').then((example)  => {
+            home.login(example['user'].username, example['user'].password)
+        })
         manager.logout();
 
         cy.get('form[name="frmLogin"]').should('be.visible')
