@@ -7,12 +7,12 @@ Base Cypress Project with POM
 - Install [Cypress](https://cypress.io/) with 
 
     ```npm install cypress --save-dev```
-- Start Cypress
+- Start Cypress (with GUI)
 
-    ```npm run cypress:open```
+    ```npm run cy:open```
 - or Run Cypress
 
-    ```npm run cypress:run```
+    ```npm run cy:run```
 
 ## Applitools Eyes setup
 - Install [Eyes](https://applitools.com/) with
