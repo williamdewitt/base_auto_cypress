@@ -2,7 +2,7 @@
     "name": "cypress",
     "dependencies": {},
     "scripts": {
-        "startdb": "json-server --watch cypress/fixtures/db.json",
+        "start:db": "json-server --watch cypress/fixtures/db.json",
         "cy:open": "npx cypress open",
         "cy:run": "npx cypress run"
     },
